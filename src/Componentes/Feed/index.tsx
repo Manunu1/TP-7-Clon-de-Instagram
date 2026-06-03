@@ -1,13 +1,6 @@
 import "./Feed.css";
-import Post from "../Post/index.js";
-
-type PostType = {
-  id: number;
-  image: string;
-  likes: number;
-  caption: string;
-  user: string;
-};
+import Post from "../Post";
+import type { Post as PostType } from "../../Types/post";
 
 type FeedProps = {
   posts: PostType[];

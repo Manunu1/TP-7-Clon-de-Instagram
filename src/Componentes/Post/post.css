@@ -1,0 +1,82 @@
+.post {
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  width: 100%;
+}
+
+/* Encabezado: Avatar + Nombre */
+.post-header {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  border: 1px solid #dbdbdb;
+}
+
+.username {
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Imagen del Post */
+.post-image-container {
+  width: 100%;
+  background-color: #000; /* Por si la imagen tarda en cargar */
+  display: flex;
+  align-items: center;
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+/* Botones de acción */
+.post-actions {
+  padding: 8px 12px 0 12px;
+}
+
+.like-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.1s ease;
+}
+
+.like-btn:active {
+  transform: scale(1.2); /* Efecto pop al cliquear */
+}
+
+/* Información inferior */
+.post-info {
+  padding: 0 12px 12px 12px;
+  font-size: 14px;
+}
+
+.likes {
+  font-weight: 600;
+  margin: 6px 0;
+}
+
+.caption {
+  margin: 4px 0 0 0;
+  line-height: 1.4;
+}
+
+.caption strong {
+  font-weight: 600;
+  margin-right: 6px;
+}

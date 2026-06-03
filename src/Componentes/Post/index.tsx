@@ -1,18 +1,11 @@
 import { useState } from "react";
 import "./Post.css";
+import type { Post } from "../../Types/post";
 
-type PostType = {
-  id: number;
-  image: string;
-  likes: number;
-  caption: string;
-  user: string;
-};
-
-type PostProps = {
-  post: PostType;
+interface PostProps {
+  post: Post;
   onClick: () => void;
-};
+}
 
 export default function Post({ post, onClick }: PostProps) {
   const [liked, setLiked] = useState<boolean>(false);

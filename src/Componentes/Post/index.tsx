@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./Post.css";
 import type { Post } from "../../Types/post";
+// 1. Importamos el icono Heart de la librería
+import { Heart } from "lucide-react";
 
 interface PostProps {
   post: Post;
@@ -16,7 +18,6 @@ export default function Post({ post, onClick }: PostProps) {
 
   return (
     <article className="post">
-
       <div className="post-header">
         <img
           src="https://i.pravatar.cc/40"
@@ -37,7 +38,12 @@ export default function Post({ post, onClick }: PostProps) {
 
       <div className="post-actions">
         <button onClick={handleLike} className="like-btn">
-          {liked ? "❤️" : "🤍"}
+          {/* 2. Usamos el componente Heart y le cambiamos las propiedades según el estado */}
+          <Heart
+            size={24}
+            fill={liked ? "#ed4956" : "none"}
+            color={liked ? "#ed4956" : "#262626"}
+          />
         </button>
       </div>
 
@@ -50,7 +56,6 @@ export default function Post({ post, onClick }: PostProps) {
           <strong>{post.user}</strong> {post.caption}
         </p>
       </div>
-
     </article>
   );
 }

@@ -1,0 +1,63 @@
+import { useState } from "react";
+import "./Post.css";
+
+type PostType = {
+  id: number;
+  image: string;
+  likes: number;
+  caption: string;
+  user: string;
+};
+
+type PostProps = {
+  post: PostType;
+  onClick: () => void;
+};
+
+export default function Post({ post, onClick }: PostProps) {
+  const [liked, setLiked] = useState<boolean>(false);
+
+  const handleLike = () => {
+    setLiked(!liked);
+  };
+
+  return (
+    <article className="post">
+
+      <div className="post-header">
+        <img
+          src="https://i.pravatar.cc/40"
+          alt="avatar"
+          className="avatar"
+        />
+        <span className="username">{post.user}</span>
+      </div>
+
+      <div className="post-image-container">
+        <img
+          src={post.image}
+          alt="post"
+          className="post-image"
+          onClick={onClick}
+        />
+      </div>
+
+      <div className="post-actions">
+        <button onClick={handleLike} className="like-btn">
+          {liked ? "❤️" : "🤍"}
+        </button>
+      </div>
+
+      <div className="post-info">
+        <p className="likes">
+          {post.likes + (liked ? 1 : 0)} likes
+        </p>
+
+        <p className="caption">
+          <strong>{post.user}</strong> {post.caption}
+        </p>
+      </div>
+
+    </article>
+  );
+}

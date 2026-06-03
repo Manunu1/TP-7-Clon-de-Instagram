@@ -1,0 +1,23 @@
+.profile-container {
+  max-width: 935px; /* Ancho máximo oficial del perfil de Instagram */
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 20px 0 20px;
+  box-sizing: border-box;
+  margin-left: 320px; /* Al igual que el feed, evita que la sidebar lo tape */
+}
+
+/* Ajuste si la sidebar se achica en pantallas medianas */
+@media (max-width: 1200px) {
+  .profile-container {
+    margin-left: 120px;
+  }
+}
+
+/* Ajuste para celulares */
+@media (max-width: 768px) {
+  .profile-container {
+    margin-left: 0;
+    padding: 0;
+  }
+}

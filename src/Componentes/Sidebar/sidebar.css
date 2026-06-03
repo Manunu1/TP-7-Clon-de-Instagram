@@ -1,0 +1,91 @@
+/* Contenedor principal de la Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 244px; /* Ancho oficial de la sidebar de IG en escritorio */
+  height: 100vh;
+  background-color: #ffffff;
+  border-right: 1px solid #dbdbdb;
+  padding: 8px 12px 20px 12px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+/* El Logo de Instagram */
+.logo {
+  font-family: 'Style Script', 'Grand Hotel', 'Georgia', serif; /* Fuentes que simulan el logo cursivo */
+  font-size: 24px;
+  font-weight: normal;
+  margin: 28px 0 24px 12px;
+  color: #000000;
+  cursor: pointer;
+}
+
+/* El contenedor de la lista de navegación */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Separación sutil entre ítems */
+  width: 100%;
+}
+
+/* Elemento del Menú (Icono + Texto) */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Espacio exacto entre el icono y el texto */
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #000000;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  user-select: none;
+}
+
+/* Efecto Hover (al pasar el mouse por encima) */
+.menu-item:hover {
+  background-color: #f2f2f2; /* Gris clarito de IG */
+}
+
+/* Efecto al hacer clic */
+.menu-item:active {
+  transform: scale(0.98);
+}
+
+/* Estilo del texto del menú */
+.menu-item span {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* Ítem activo (en este caso, Home) */
+.menu-item.active span {
+  font-weight: 700; /* Instagram resalta el texto en negrita cuando estás ahí */
+}
+
+/* El botón "More" que va abajo del todo */
+.menu.bottom {
+  margin-top: auto; /* Empuja este contenedor al fondo de la sidebar */
+}
+
+/* Ajuste Responsivo: Si la pantalla es chica (diseño tablet/móvil) */
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 72px; /* Se achica para mostrar solo los iconos */
+    padding: 8px;
+    align-items: center;
+  }
+
+  .logo {
+    display: none; /* Ocultamos el texto "Instagram" largo */
+  }
+
+  /* Si querés podés agregar un logo chiquito acá, o dejarlo vacío como hace IG */
+  
+  .menu-item span {
+    display: none; /* Oculta los textos, dejando solo los vectores de Lucide */
+  }
+}

@@ -1,9 +1,16 @@
 .feed {
-  max-width: 470px; /* Ancho exacto del feed de Instagram moderno */
+  margin-left: 320px; /* Desplaza el feed para que no lo tape la sidebar */
+  max-width: 470px;
   width: 100%;
-  margin: 0 auto;
   padding: 20px 0;
   display: flex;
   flex-direction: column;
-  gap: 16px; /* Separación limpia entre publicaciones */
+  gap: 16px;
+}
+
+/* Ajuste cuando la barra se achica en pantallas medianas */
+@media (max-width: 1200px) {
+  .feed {
+    margin-left: 120px; 
+  }
 }

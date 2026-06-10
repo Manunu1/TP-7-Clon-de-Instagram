@@ -1,73 +1,147 @@
-# React + TypeScript + Vite
+# 📸 Clon de Instagram - Trabajo Práctico
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🧠 Descripción
 
-Currently, two official plugins are available:
+Este proyecto consiste en el desarrollo de un **clon simplificado de Instagram**, realizado con **React y TypeScript**, con el objetivo de aplicar conceptos de frontend moderno como:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Componentización
+* Manejo de estado
+* Tipado con TypeScript
+* Diseño UI similar a una aplicación real
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Funcionalidades
 
-## Expanding the ESLint configuration
+### 🏠 Feed (Home)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* Visualización de publicaciones
+* Historias (Stories) en formato horizontal
+* Apertura de publicaciones en modal
+* Visualización de:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+  * Imagen
+  * Usuario
+  * Descripción
+  * Fecha
+  * Comentarios simulados
+* Sistema de **likes interactivo**
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 👤 Perfil
+
+* Información del usuario
+* Grilla de publicaciones
+* Reutilización de componentes del feed
+
+---
+
+### 💬 Publicaciones
+
+Cada post incluye:
+
+* Imagen
+* Usuario
+* Cantidad de likes
+* Descripción
+* Fecha
+* Comentarios simulados
+
+---
+
+### 📱 Historias (Stories)
+
+* Barra horizontal scrolleable
+* Imágenes circulares
+* Estilo visual similar a Instagram (aro de colores)
+
+---
+
+## 🧱 Tecnologías utilizadas
+
+* ⚛️ React
+* 🟦 TypeScript
+* 🎨 CSS
+* ⚡ Vite
+
+---
+
+## 📂 Estructura del proyecto
+
+```
+src/
+│
+├── Componentes/
+│   ├── Post
+│   ├── PostGrid
+│   ├── StoriesBar
+│   ├── ProfileHeader
+│
+├── Pages/
+│   ├── Home
+│   ├── Profile
+│
+├── Types/
+│   ├── post.ts
+│   ├── comment.ts
+│   ├── story.ts
+│
+└── styles/
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🧩 Conceptos aplicados
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+* Separación de componentes reutilizables
+* Uso de `useState` para manejar estado
+* Tipado fuerte con interfaces/types
+* Props entre componentes
+* Renderizado dinámico con `.map()`
+
+---
+
+## 🎯 Objetivo del trabajo
+
+Simular una red social moderna enfocándose en:
+
+* Diseño visual
+* Experiencia de usuario
+* Buenas prácticas en React
+
+---
+
+## 📌 Notas
+
+* Las historias y comentarios son **simulados (mock data)**
+* No hay conexión con backend
+* El proyecto está enfocado únicamente en frontend
+
+---
+
+## 👨‍💻 Autor
+
+Desarrollado por **Manuel Mandel**
+
+---
+
+## 🏁 Estado del proyecto
+
+✅ Funcional
+✅ Interfaz completa
+✅ Listo para entrega
+
+---
+
+## 💡 Posibles mejoras futuras
+
+* Conexión a API real
+* Sistema de autenticación
+* Likes persistentes
+* Historias interactivas
+* Subida de publicaciones
+
+---
+
+✨ *Proyecto realizado con fines educativos*

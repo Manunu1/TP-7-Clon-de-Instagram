@@ -23,9 +23,9 @@ export default function Sidebar() {
 
             <nav className="menu">
 
-                <div className="menu-item active">
+                <div className="menu-item active" onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
                     <Home size={24} />
-                    <span onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
+                    <span>
                         Home
                     </span>
                 </div>
@@ -60,9 +60,9 @@ export default function Sidebar() {
                     <span>Create</span>
                 </div>
 
-                <div className="menu-item">
+                <div className="menu-item" onClick={() => navigate("/profile")} style={{ cursor: "pointer" }}>
                     <User size={24} />
-                    <span onClick={() => navigate("/profile")} style={{ cursor: "pointer" }}>
+                    <span>
                         Profile
                     </span>
                 </div>

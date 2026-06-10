@@ -1,0 +1,50 @@
+/* StoriesBar.css */
+
+.stories-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 0;
+  overflow-x: auto;
+  background: transparent;
+}
+
+.story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+.story-ring {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+}
+
+.story-ring img {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  background: transparent;
+}
+
+.story span {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #333;
+  max-width: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -3,6 +3,7 @@ import Feed from "../../Componentes/Feed";
 import type { Post } from "../../Types/post";
 import { getPosts } from "../../Services/api";
 import PostModal from "../../Componentes/PostModal";
+import "./home.css"
 
 export default function Home() {
 
@@ -30,7 +31,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="home-container">
 
       {loading ? ( //si loading es true, se muestra el coso de carga, sino se muestra el feed
         <div className="spinner"></div>

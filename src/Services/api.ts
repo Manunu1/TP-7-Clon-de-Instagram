@@ -10,6 +10,11 @@ export const getPosts = async (): Promise<Post[]> => {
     likes: Math.floor(Math.random() * 500),
     caption: "Un perrito 🐶",
     user: "manuel_dev",
+    date: "Hace 2 días",
+    comments: [
+      { id: 1, user: "juan", text: "🔥🔥🔥" },
+      { id: 2, user: "ana", text: "muy bueno" }
+    ]
   }));
 
   return formattedPosts;

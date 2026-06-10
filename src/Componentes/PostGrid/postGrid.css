@@ -1,17 +1,18 @@
+/* postGrid.css */
 .post-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Crea exactamente 3 columnas iguales */
-  gap: 28px; /* Espaciado entre publicaciones en escritorio */
-  margin-top: 44px; /* Separación con respecto al ProfileHeader */
-  border-top: 1px solid #dbdbdb; /* Línea divisoria superior clásica */
-  padding-top: 0px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px; /* Separación limpia tipo escritorio */
+  margin-top: 44px;
+  border-top: 1px solid #dbdbdb;
+  padding-top: 28px;
 }
 
-/* En pantallas más chicas o celulares, Instagram achica la separación */
 @media (max-width: 768px) {
   .post-grid {
-    gap: 3px; 
+    gap: 3px; /* Espaciado milimétrico en celulares */
     margin-top: 0;
     border-top: none;
+    padding-top: 3px;
   }
 }

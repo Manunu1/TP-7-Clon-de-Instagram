@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.65); /* Fondo oscuro semitransparente */
+  background-color: rgba(0, 0, 0, 0.65);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,15 +15,17 @@
 .modal-content {
   background-color: #ffffff;
   width: 100%;
-  max-width: 900px;
-  max-height: 85vh;
-  display: flex; /* Divide imagen a la izquierda, info a la derecha */
+  max-width: 1000px;
+  /* Lo agrandamos un toque para que la info y comentarios respiren mejor */
+  height: 85vh;
+  /* Fijamos el alto para que el scroll de comentarios funcione perfecto */
+  display: flex;
   border-radius: 4px;
   overflow: hidden;
   position: relative;
 }
 
-/* Botón de cerrar (Arriba a la derecha afuera o flotando) */
+/* Botón de cerrar flotando arriba a la derecha */
 .close-btn {
   position: absolute;
   top: 10px;
@@ -38,53 +40,109 @@
   justify-content: center;
   align-items: center;
   z-index: 1010;
-  font-size: 12px;
+  transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 1);
 }
 
 /* Columna Izquierda: Imagen */
 .modal-image {
   width: 60%;
-  max-height: 85vh;
+  height: 100%;
   object-fit: contain;
   background-color: #000000;
+  /* Fondo negro clásico por si la imagen es vertical */
 }
 
-/* Columna Derecha: Información */
+/* Columna Derecha: Información y comentarios */
 .modal-info {
   width: 40%;
-  padding: 20px;
+  padding: 0;
+  /* Quitamos el padding general para controlar los bordes internos de IG */
   display: flex;
   flex-direction: column;
   border-left: 1px solid #dbdbdb;
   font-size: 14px;
+  height: 100%;
+  box-sizing: border-box;
 }
 
+/* Cabecera del modal (Nombre de usuario) */
 .modal-info h3 {
-  margin-top: 0;
+  margin: 0;
   font-size: 14px;
   font-weight: 600;
+  padding: 16px;
   border-bottom: 1px solid #efefef;
-  padding-bottom: 15px;
 }
 
-.modal-info p {
-  margin: 8px 0;
+/* Contenedor central: Caption + Comentarios con SCROLL */
+.comments {
+  flex-grow: 1;
+  /* Ocupa todo el espacio disponible empujando los likes abajo */
+  overflow-y: auto;
+  /* Habilita el scroll vertical si hay muchos comentarios */
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Estilos para el texto de la descripción y los comentarios */
+.caption,
+.comments p {
+  margin: 0;
   line-height: 1.4;
+  word-break: break-word;
+  /* Evita que textos largos rompan el diseño */
 }
 
-/* Adaptación para pantallas de celular */
+.caption strong,
+.comments strong {
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+/* Sección inferior fija: Likes y Fecha */
+.likes {
+  margin: 0;
+  padding: 12px 16px 4px 16px;
+  border-top: 1px solid #efefef;
+  font-weight: 600;
+}
+
+.date {
+  font-size: 10px;
+  color: #737373;
+  text-transform: uppercase;
+  /* IG pone las fechas en mayúscula chica */
+  padding: 0 16px 16px 16px;
+  letter-spacing: 0.2px;
+}
+
+/* --- DISEÑO RESPONSIVO (Celulares) --- */
 @media (max-width: 768px) {
   .modal-content {
     flex-direction: column;
+    height: auto;
     max-height: 90vh;
   }
+
   .modal-image {
     width: 100%;
-    max-height: 50vh;
+    height: 40vh;
   }
+
   .modal-info {
     width: 100%;
+    height: 50vh;
+    /* Reparte el espacio en mobile */
     border-left: none;
-    border-top: 1px solid #dbdbdb;
+  }
+
+  .comments {
+    padding: 12px;
   }
 }

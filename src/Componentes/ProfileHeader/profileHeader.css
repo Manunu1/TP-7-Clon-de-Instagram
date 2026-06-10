@@ -1,13 +1,12 @@
-/* Contenedor principal de la cabecera */
+/* profileHeader.css */
 .profile-header {
   display: flex;
   align-items: center;
-  margin-bottom: 44px; /* Espacio antes de la grilla de publicaciones */
-  padding: 10px 0;
+  margin-bottom: 44px;
+  padding-bottom: 10px;
   width: 100%;
 }
 
-/* Columna Izquierda: Contenedor del Avatar */
 .profile-header__left {
   flex-grow: 1;
   display: flex;
@@ -15,7 +14,6 @@
   margin-right: 30px;
 }
 
-/* Foto de Perfil Redonda Grande */
 .profile-header__avatar {
   width: 150px;
   height: 150px;
@@ -24,32 +22,30 @@
   border: 1px solid #dbdbdb;
 }
 
-/* Columna Derecha: Contenedor de toda la información */
 .profile-header__right {
   flex-grow: 2;
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Separación vertical entre Top, Stats y Bio */
+  gap: 20px;
 }
 
-/* Fila Superior: Username + Botones */
+/* Fila de nombre y botones de interacción */
 .profile-header__top {
   display: flex;
   align-items: center;
   gap: 20px;
-  flex-wrap: wrap; /* Por si el espacio se achica */
+  flex-wrap: wrap;
 }
 
 .profile-header__top .username {
   font-size: 20px;
-  font-weight: 400; /* Instagram usa un peso más liviano para el nombre acá */
+  font-weight: 400;
   margin: 0;
-  color: #000000;
+  color: #262626;
 }
 
-/* Botones genéricos de la cabecera */
 .btn {
-  background-color: #efefef; /* Gris claro de botones secundarios */
+  background-color: #efefef;
   border: none;
   border-radius: 8px;
   color: #000000;
@@ -57,15 +53,14 @@
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s;
   user-select: none;
 }
 
 .btn:hover {
-  background-color: #dbdbdb; /* Un toque más oscuro en hover */
+  background-color: #dbdbdb;
 }
 
-/* Botón Principal (Seguir) con el azul de Instagram */
 .btn.primary {
   background-color: #0095f6;
   color: #ffffff;
@@ -75,23 +70,21 @@
   background-color: #1877f2;
 }
 
-/* Fila Media: Estadísticas (Publicaciones, Seguidores, Seguidos) */
+/* Estadísticas fijas */
 .profile-header__stats {
   display: flex;
-  gap: 40px; /* Separación horizontal entre los contadores */
+  gap: 40px;
   font-size: 16px;
-  color: #000000;
 }
 
 .profile-header__stats strong {
   font-weight: 600;
 }
 
-/* Fila Inferior: Biografía */
+/* Biografía inferior */
 .profile-header__bio {
   font-size: 14px;
   line-height: 1.5;
-  color: #000000;
 }
 
 .profile-header__bio p {
@@ -99,26 +92,25 @@
 }
 
 .profile-header__bio .name {
-  font-weight: 600; /* El nombre real va resaltado */
+  font-weight: 600;
   margin-bottom: 4px;
 }
 
-/* --- DISEÑO RESPONSIVO (Para Celulares) --- */
+/* Mobile Responsivo */
 @media (max-width: 768px) {
   .profile-header {
-    flex-direction: row; /* Mantiene la estructura pero acomoda los tamaños */
     padding: 16px;
     margin-bottom: 0;
     align-items: flex-start;
   }
 
   .profile-header__left {
-    margin-right: 20px;
+    margin-right: 16px;
     flex-grow: 0;
   }
 
   .profile-header__avatar {
-    width: 77px; /* Tamaño de avatar móvil en Instagram */
+    width: 77px;
     height: 77px;
   }
 
@@ -127,15 +119,11 @@
   }
 
   .profile-header__top {
-    flex-direction: column;
-    align-items: flex-start;
     gap: 8px;
   }
-
-  /* Las estadísticas en mobile suelen ir abajo de la bio ocupando todo el ancho, 
-     pero para mantener tu HTML intacto, las hacemos un poco más compactas */
+  
   .profile-header__stats {
     gap: 15px;
-    font-size: 14px;
+    font-size: 13px;
   }
 }

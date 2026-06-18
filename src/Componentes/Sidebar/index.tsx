@@ -11,10 +11,10 @@ import {
     PlusSquare,
     User,
     Menu
-} from "lucide-react";
+} from "lucide-react"; //me importo los iconos de lucide-react
 
 export default function Sidebar() {
-    const navigate = useNavigate(); // ✅ CLAVE
+    const navigate = useNavigate(); //esto me deja cambiar la pagina sin recargar, es parte de react-router-dom
 
     return (
         <aside className="sidebar">
@@ -23,7 +23,7 @@ export default function Sidebar() {
 
             <nav className="menu">
 
-                <div className="menu-item active" onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
+                <div className="menu-item active" onClick={() => navigate("/")} style={{ cursor: "pointer" }}> {/* cuando hago click, me manda a la home */}
                     <Home size={24} />
                     <span>
                         Home
@@ -60,7 +60,7 @@ export default function Sidebar() {
                     <span>Create</span>
                 </div>
 
-                <div className="menu-item" onClick={() => navigate("/profile")} style={{ cursor: "pointer" }}>
+                <div className="menu-item" onClick={() => navigate("/profile")} style={{ cursor: "pointer" }}> {/* cuando hago click, me manda a la pagina del perfil */}
                     <User size={24} />
                     <span>
                         Profile

@@ -1,7 +1,7 @@
 import "./profileHeader.css";
 
 export default function ProfileHeader() {
-    return (
+    return ( /* toda info hardcodeada */
         <div className="profile-header">
 
             {/* Foto */}

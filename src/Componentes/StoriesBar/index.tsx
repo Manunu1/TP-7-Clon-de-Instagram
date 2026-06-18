@@ -2,7 +2,7 @@ import "./storiesBar.css";
 import type { Story } from "../../Types/story";
 
 export default function StoriesBar() {
-  const stories: Story[] = [
+  const stories: Story[] = [ //datos hardcodeados
     { id: 1, user: "tu_usuario", image: "https://i.pravatar.cc/150?img=1" },
     { id: 2, user: "juan", image: "https://i.pravatar.cc/150?img=2" },
     { id: 3, user: "ana", image: "https://i.pravatar.cc/150?img=3" },
@@ -17,7 +17,7 @@ export default function StoriesBar() {
 
   return (
     <div className="stories-bar">
-      {stories.map((story) => (
+      {stories.map((story) => ( /* mapea cada historia en divs */
         <div key={story.id} className="story">
           <div className="story-ring">
             <img src={story.image} alt={story.user} />

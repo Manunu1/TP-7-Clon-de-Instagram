@@ -6,9 +6,9 @@ import "./profile.css";
 import PostModal from "../../Componentes/PostModal";
 
 export default function Profile() {
-    const [selectedPost, setSelectedPost] = useState<Post | null>(null);
+    const [selectedPost, setSelectedPost] = useState<Post | null>(null); //puede ser post, o null
 
-    const posts: Post[] = [
+    const posts: Post[] = [ //posteos hardcodeados para mostrar en el perfil
         {
             id: 1,
             image: "https://picsum.photos/300?1",
@@ -38,10 +38,9 @@ export default function Profile() {
     return (
         <div className="profile-container">
             <ProfileHeader />
-            <PostGrid posts={posts} setSelectedPost={setSelectedPost} />
+            <PostGrid posts={posts} setSelectedPost={setSelectedPost} /> {/* el postgrid es el que contiene los posteos (es como el feed) */}
 
-            {/* 🔥 ESTO ES LO ÚNICO QUE TE FALTA */}
-            {selectedPost && (
+            {selectedPost && ( /* si hay un post seleccionado, muestra el modal con la info del post, sino no muestra nada */
                 <PostModal
                     post={selectedPost}
                     onClose={() => setSelectedPost(null)}

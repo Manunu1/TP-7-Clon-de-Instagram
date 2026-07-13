@@ -2,6 +2,7 @@ import { registerUser, loginUser } from "../services/authService.js";
 
 export const register = async (req, res) => {
     try {
+        console.log("BODY:", req.body); // 👈 AGREGÁ ESTO
         const user = await registerUser(req.body);
         res.status(201).json(user);
     } catch (error) {

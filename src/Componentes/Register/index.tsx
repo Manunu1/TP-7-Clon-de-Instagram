@@ -31,7 +31,7 @@ export default function Register() {
         });
 
         if (res.ok) {
-            navigate("/login");
+            navigate("/");
         } else {
             setError(res.message || "Error al registrarse");
         }
@@ -93,7 +93,7 @@ export default function Register() {
                     ¿Ya tenés una cuenta?{" "}
                     <button
                         className="register-btn-switch"
-                        onClick={() => navigate("/login")}
+                        onClick={() => navigate("/")}
                     >
                         Iniciá sesión
                     </button>

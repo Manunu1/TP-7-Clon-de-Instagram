@@ -5,6 +5,7 @@ import { getPosts } from "../../Services/api";
 import PostModal from "../../Componentes/PostModal";
 import "./home.css"
 import StoriesBar from "../../Componentes/StoriesBar";
+import CrearPost from "../../Componentes/CrearPost";
 
 export default function Home() {
 
@@ -35,7 +36,7 @@ export default function Home() {
     <div className="home-container">
 
       <StoriesBar />
-      
+
       {loading ? ( //si loading es true, se muestra el coso de carga, sino se muestra el feed
         <div className="spinner"></div>
       ) : (
@@ -48,6 +49,23 @@ export default function Home() {
           onClose={() => setSelectedPost(null)}
         />
       )}
+
+      <CrearPost
+        onPostCreated={(newPost: any) => {
+          setPosts((prev) => [
+            {
+              id: newPost.id,
+              image: newPost.url_imagen,
+              likes: newPost.likes,
+              caption: newPost.descripcion,
+              user: newPost.nombre_usuario || "yo",
+              date: new Date(newPost.fecha_creacion).toLocaleDateString(),
+              comments: []
+            },
+            ...prev
+          ]);
+        }}
+      />
 
     </div>
   );

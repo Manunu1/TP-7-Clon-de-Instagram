@@ -3,7 +3,6 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import authRoutes from "./routes/authRoutes.js";
-import userRoutes from "./routes/userRoutes.js";
 import postRoutes from "./routes/postRoutes.js";
 
 dotenv.config();
@@ -17,7 +16,6 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 
 // PROTEGIDAS (pero middleware dentro de routes)
-app.use("/api/usuarios", userRoutes);
 app.use("/api/publicaciones", postRoutes);
 
 app.get("/", (req, res) => {

@@ -18,3 +18,19 @@ export const createPost = async (req, res) => {
         res.status(500).json({ message: "Error al crear publicación" });
     }
 };
+
+export const getPublicaciones = async (req, res) => {
+    try {
+        const result = await pool.query(`
+            SELECT p.*, u.nombre_usuario
+            FROM publicaciones p
+            JOIN usuarios u ON p.usuario_id = u.id
+            ORDER BY p.fecha_creacion DESC
+        `);
+
+        res.json(result.rows);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Error al obtener publicaciones" });
+    }
+};
